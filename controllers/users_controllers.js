@@ -1,0 +1,67 @@
+import User from "../models/users_model.js";
+import { authtoken } from "../utils/authtoken.js";
+
+// 👉 SIGNUP CONTROLLER
+export const userSignup = async (req, res) => {
+  try {
+    const { fullName, email, password } = req.body;
+
+    if (!fullName || !email || !password)
+      return res.status(400).json({ msg: "All fields are required !!" });
+
+
+    // Check if email format is valid (simple regex)
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email))
+        return res.status(400).json({ msg: "Invalid email format !!" });
+
+    // CHECK IF USER EXISTS
+    let user = await User.findOne({ email });
+
+    if (user) return res.status(400).json({ msg: "User already exists !!" });
+
+    user = await User.create({
+      fullName,
+      email,
+      password,
+    });
+
+    // SENT AUTH TOKEN TO USER IN COOKIE
+    authtoken(user._id, res);
+    res.redirect("/");
+  } catch (error) {
+    res.status(500).json({ msg: "Error creating user account !!", error });
+  }
+};
+
+// 👉 SIGNIN CONTROLLER
+export const userSignin = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    if (!email || !password)
+      return res.json({ msg: "All fields are required !!" });
+
+    const user = await User.findOne({ email });
+
+    if (!user || !(await user.comparePassword(password)))
+      return res.render("signin", { error: "Invalid email or password !!" });
+
+    // SENT AUTH TOKEN TO USER IN COOKIE
+    authtoken(user._id, res);
+    res.redirect("/");
+  } catch (error) {
+    console.error("Error in Sign in: ",error);
+    res.status(500).json({ msg: "Error signin user account !!", error });
+  }
+};
+
+// 👉 LOGOUT CONTROLLER
+export const userLogout = async (req, res) => {
+  try {
+    res.clearCookie("token");
+    res.redirect("/sign-in");
+  } catch (error) {
+    res.status(500).json({ msg: "Error logout user account !!", error });
+  }
+};
