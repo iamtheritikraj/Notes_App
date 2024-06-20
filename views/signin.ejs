@@ -36,9 +36,78 @@
     <title>Notebook - Secure Notes for Everyday Use</title>
   </head>
   <body>
+    <!-- START NAVBAR -->
+    <div class="h-[90px] navbar bg-base-100 border-b border-b-black">
+      <div class="navbar-start">
+          <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h8m-8 6h16" />
+                  </svg>
+              </div>
+              <ul tabindex="0"
+                  class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-xl bg-black text-[#f8fdef] rounded-lg w-52">
+                  <li class="font-semibold"><a href="/">Home</a></li>
+                  <li class="font-semibold"><a href="/views/about.ejs">About</a></li>
+                  <li class="font-semibold"><a href="/views/faq.ejs">FAQ</a></li>
+              </ul>
+          </div>
+          <a href="/" class="btn btn-ghost text-xl">
+              <svg id="logo-86" width="29" height="29" viewBox="0 0 40 40" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path class="ccustom" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M25.5557 11.6853C23.9112 10.5865 21.9778 10 20 10V0C23.9556 0 27.8224 1.17298 31.1114 3.37061C34.4004 5.56823 36.9638 8.69181 38.4776 12.3463C39.9913 16.0008 40.3874 20.0222 39.6157 23.9018C38.844 27.7814 36.9392 31.3451 34.1421 34.1421C31.3451 36.9392 27.7814 38.844 23.9018 39.6157C20.0222 40.3874 16.0008 39.9913 12.3463 38.4776C8.69181 36.9638 5.56823 34.4004 3.37061 31.1114C1.17298 27.8224 0 23.9556 0 20H10C10 21.9778 10.5865 23.9112 11.6853 25.5557C12.7841 27.2002 14.3459 28.4819 16.1732 29.2388C18.0004 29.9957 20.0111 30.1937 21.9509 29.8078C23.8907 29.422 25.6725 28.4696 27.0711 27.0711C28.4696 25.6725 29.422 23.8907 29.8078 21.9509C30.1937 20.0111 29.9957 18.0004 29.2388 16.1732C28.4819 14.3459 27.2002 12.7841 25.5557 11.6853Z"
+                      fill="#000000"></path>
+                  <path class="ccustom" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M10 5.16562e-07C10 1.31322 9.74135 2.61358 9.2388 3.82683C8.73625 5.04009 7.99966 6.14248 7.07107 7.07107C6.14249 7.99966 5.0401 8.73625 3.82684 9.2388C2.61358 9.74134 1.31322 10 5.4439e-06 10L5.00679e-06 20C2.62644 20 5.22716 19.4827 7.65368 18.4776C10.0802 17.4725 12.285 15.9993 14.1421 14.1421C15.9993 12.285 17.4725 10.0802 18.4776 7.65367C19.4827 5.22715 20 2.62643 20 -3.81469e-06L10 5.16562e-07Z"
+                      fill="#FFD700"></path>
+              </svg>
+              Notebook</a>
+      </div>
+      <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+              <li class="font-semibold"><a href="/">Home</a></li>
+              <li class="font-semibold"><a href="/about">About</a></li>
+              <li class="font-semibold"><a href="/faq">FAQ</a></li>
+          </ul>
+      </div>
+      <div class="navbar-end">
+          <% if (authvalid) { %>
+              <div class="flex-none">
+                  <div class="dropdown dropdown-end">
+                      <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                          <div class="w-10 rounded-full">
+                              <img alt="Tailwind CSS Navbar component"
+                                  src="https://pngfre.com/wp-content/uploads/anime-poster.png" />
+                          </div>
+                      </div>
+                      <ul tabindex="0"
+                          class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                          <li>
+                              <a href="/users/profile" class="justify-between">
+                                  Profile
+                                  <span class="badge">New</span>
+                              </a>
+                          </li>
+                          <li>
+                              <form action="/users/logout" method="post">
+                                  <button type="submit" class="text-black">Logout</button>
+                              </form>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <% } else { %>
+                  <a href="/sign-in" class="btn">Sign In</a>
+                  <% } %>
+      </div>
+  </div>
+  <!-- END NAVBAR -->
     <section>
       <div
-        class="flex items-center justify-center px-4 pt-20 sm:px-6 sm:pt-16 lg:px-8 lg:pt-24"
+        class="flex items-center justify-center py-14 lg:py-28 px-4 pt-20 sm:px-6 sm:pt-16 lg:px-8 lg:pt-24 bg-gray-100 dark:bg-gray-900 text-whitw dark:text-white"
       >
         <div class="w-full md:mx-auto md:w-full md:max-w-sm xl:max-w-md">
           <div class="mb-2 flex justify-center space-x-2">
@@ -69,14 +138,14 @@
               Notebook</a
             >
           </div>
-          <h2 class="text-center text-2xl font-bold leading-tight text-black">
+          <h2 class="text-center text-2xl font-bold leading-tight text-white">
             Sign in to your account
           </h2>
-          <p class="mt-2 text-center text-base text-gray-600">
+          <p class="mt-2 text-center text-base text-white">
             Don't have an account?
             <a
               href="/sign-up"
-              class="font-medium text-black transition-all duration-200 hover:underline"
+              class="font-medium text-white transition-all duration-200 hover:underline"
             >
               Sign Up
             </a>
@@ -84,7 +153,7 @@
           <form action="/users/sign-in" method="post" class="mt-8">
             <div class="space-y-5">
               <div>
-                <label for="email" class="text-base font-medium text-gray-900">
+                <label for="email" class="text-base font-medium text-white">
                   Email address
                 </label>
                 <div class="mt-2">
@@ -102,7 +171,7 @@
                 <div class="flex items-center justify-between">
                   <label
                     for="password"
-                    class="text-base font-medium text-gray-900"
+                    class="text-base font-medium text-white"
                   >
                     Password
                   </label>
@@ -149,5 +218,14 @@
         </div>
       </div>
     </section>
+
+    <footer class="footer footer-center px-4 py-6 bg-base-300 text-base-content">
+      <aside>
+          <p>
+              Copyright © 2024 - All right reserved by
+              <a href="https://github.com/iamtheritikraj" target="_blank" class="font-semibold">@Ritik Raj</a>
+          </p>
+      </aside>
+  </footer>
   </body>
 </html>

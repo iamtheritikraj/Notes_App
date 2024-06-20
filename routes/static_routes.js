@@ -10,14 +10,19 @@ router.get("/", authstatus, async (req, res) => {
   res.render("home", { authvalid: req.isAuthenticated });
 });
 
-// RENDER SIGN-IN PAGE TO "/sign-in" PATH
-router.get("/sign-in", (req, res) => {
-  res.render("signin");
+router.get("/sign-in",authstatus,async (req,res) => {
+  res.render("signin",{authvalid:req.isAuthenticated});
 });
 
-// RENDER SIGN-UP PAGE TO "/sign-up" PATH
-router.get("/sign-up", (req, res) => {
-  res.render("signup");
+router.get("/sign-up",authstatus,async (req,res) => {
+  res.render("signup",{authvalid:req.isAuthenticated});
 });
+router.get("/about",authstatus,async (req,res) => {
+  res.render("about",{authvalid:req.isAuthenticated});
+});
+router.get("/faq",authstatus,async (req,res) => {
+  res.render("faq",{authvalid:req.isAuthenticated});
+});
+
 
 export default router;
