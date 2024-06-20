@@ -20,12 +20,12 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
     <!-- TAILWIND CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Notebook - Secure Notes for Everyday Use</title>
+    <title>NoteBook - About Page</title>
 </head>
 
 <body>
     <!-- START NAVBAR -->
-    <div class="h-[90px] navbar bg-base-100 border-b border-b-black">
+    <div class="h-[90px] navbar bg-[#a7c9bf] border-b border-b-black">
         <div class="navbar-start">
             <div class="dropdown">
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -39,7 +39,7 @@
                     class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-xl bg-black text-[#f8fdef] rounded-lg w-52">
                     <li class="font-semibold"><a href="/">Home</a></li>
                     <li class="font-semibold"><a href="/views/about.ejs">About</a></li>
-                    <li class="font-semibold"><a href="/views/faq.ejs">FAQ</a></li>
+                    <li class="font-semibold"><a href="/views/faq.ejs">FAQs</a></li>
                 </ul>
             </div>
             <a href="/" class="btn btn-ghost text-xl">
@@ -52,7 +52,7 @@
                         d="M10 5.16562e-07C10 1.31322 9.74135 2.61358 9.2388 3.82683C8.73625 5.04009 7.99966 6.14248 7.07107 7.07107C6.14249 7.99966 5.0401 8.73625 3.82684 9.2388C2.61358 9.74134 1.31322 10 5.4439e-06 10L5.00679e-06 20C2.62644 20 5.22716 19.4827 7.65368 18.4776C10.0802 17.4725 12.285 15.9993 14.1421 14.1421C15.9993 12.285 17.4725 10.0802 18.4776 7.65367C19.4827 5.22715 20 2.62643 20 -3.81469e-06L10 5.16562e-07Z"
                         fill="#FFD700"></path>
                 </svg>
-                Notebook</a>
+                NoteBook</a>
         </div>
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
@@ -94,13 +94,29 @@
     </div>
     <!-- END NAVBAR -->
     <!-- ABOUT Section Start -->
+    <div class="mx-auto py-14 lg:py-28 bg-gray-100 dark:bg-gray-900 text-white dark:text-white">
+        <div class="max-w-screen-lg mx-auto">
+          <h1 class="text-4xl font-bold text-center mb-8">About NoteBook App</h1>
+          <div class="bg-gray-800 rounded-lg shadow-lg p-6 md:p-12">
+            <h2 class="text-2xl font-semibold mb-4">Features</h2>
+            <ul class="list-disc pl-6 space-y-2">
+              <li class="text-lg"><strong>Create Notes:</strong> Easily add new notes.</li>
+              <li class="text-lg"><strong>Edit Notes:</strong> Update your notes whenever you need to.</li>
+              <li class="text-lg"><strong>Delete Notes:</strong> Remove notes that are no longer necessary.</li>
+              <li class="text-lg"><strong>User Authentication:</strong> Enjoy a secure login system with JWT and cookies.</li>
+              <li class="text-lg"><strong>Password Security:</strong> Your passwords are kept safe with bcrypt.js hashing.</li>
+              <li class="text-lg"><strong>Protected Access:</strong> Access to the app’s features is restricted to authenticated users only.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     <!-- ABOUT Section End -->
 
 
-    <footer class="footer footer-center px-4 py-6 bg-base-300 text-base-content">
+    <footer class="footer footer-center px-4 py-6 bg-[#a7c9bf] text-base-content">
         <aside>
             <p>
-                Copyright © 2024 - All right reserved by
+                Copyright © 2024 - All rights reserved by
                 <a href="https://github.com/iamtheritikraj" target="_blank" class="font-semibold">@Ritik Raj</a>
             </p>
         </aside>

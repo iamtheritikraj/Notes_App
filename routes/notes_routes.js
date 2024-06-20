@@ -12,9 +12,9 @@ import { authstatus } from "../middlewares/authstatus.js";
 
 const router = express.Router();
 
-// 👉 GET ALL NOTES        /notes
-router.get("/", authvalid, authstatus, getAllNotes);
 
+// 👉 GET ALL NOTES        /notes
+router.get("/",authvalid, authstatus, getAllNotes);
 // 👉 CREATE NEW NOTES     /notes/create
 router.post("/create", authvalid, createNote);
 

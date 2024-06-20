@@ -33,11 +33,11 @@
     />
     <!-- TAILWIND CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Notebook - Secure Notes for Everyday Use</title>
+    <title>NoteBook - Keeps your thought safe</title>
   </head>
   <body>
     <!-- START NAVBAR -->
-    <div class="h-[90px] navbar bg-base-100 border-b border-b-black">
+    <div class="h-[90px] navbar bg-[#a7c9bf] border-b border-b-black">
       <div class="navbar-start">
           <div class="dropdown">
               <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -64,7 +64,7 @@
                       d="M10 5.16562e-07C10 1.31322 9.74135 2.61358 9.2388 3.82683C8.73625 5.04009 7.99966 6.14248 7.07107 7.07107C6.14249 7.99966 5.0401 8.73625 3.82684 9.2388C2.61358 9.74134 1.31322 10 5.4439e-06 10L5.00679e-06 20C2.62644 20 5.22716 19.4827 7.65368 18.4776C10.0802 17.4725 12.285 15.9993 14.1421 14.1421C15.9993 12.285 17.4725 10.0802 18.4776 7.65367C19.4827 5.22715 20 2.62643 20 -3.81469e-06L10 5.16562e-07Z"
                       fill="#FFD700"></path>
               </svg>
-              Notebook</a>
+              NoteBook</a>
       </div>
       <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1">
@@ -74,34 +74,7 @@
           </ul>
       </div>
       <div class="navbar-end">
-          <% if (authvalid) { %>
-              <div class="flex-none">
-                  <div class="dropdown dropdown-end">
-                      <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-                          <div class="w-10 rounded-full">
-                              <img alt="Tailwind CSS Navbar component"
-                                  src="https://pngfre.com/wp-content/uploads/anime-poster.png" />
-                          </div>
-                      </div>
-                      <ul tabindex="0"
-                          class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                          <li>
-                              <a href="/users/profile" class="justify-between">
-                                  Profile
-                                  <span class="badge">New</span>
-                              </a>
-                          </li>
-                          <li>
-                              <form action="/users/logout" method="post">
-                                  <button type="submit" class="text-black">Logout</button>
-                              </form>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-              <% } else { %>
-                  <a href="/sign-in" class="btn">Sign In</a>
-                  <% } %>
+        <a href="/sign-in" class="btn">Sign In</a>
       </div>
   </div>
   <!-- END NAVBAR -->
@@ -135,7 +108,7 @@
                   fill="#FFD700"
                 ></path>
               </svg>
-              Notebook</a
+              NoteBook</a
             >
           </div>
           <h2 class="text-center text-2xl font-bold leading-tight text-white">
@@ -219,10 +192,10 @@
       </div>
     </section>
 
-    <footer class="footer footer-center px-4 py-6 bg-base-300 text-base-content">
+    <footer class="footer footer-center px-4 py-6 bg-[#a7c9bf] text-base-content">
       <aside>
           <p>
-              Copyright © 2024 - All right reserved by
+              Copyright © 2024 - All rights reserved by
               <a href="https://github.com/iamtheritikraj" target="_blank" class="font-semibold">@Ritik Raj</a>
           </p>
       </aside>

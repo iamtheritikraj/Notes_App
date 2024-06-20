@@ -11,11 +11,11 @@ router.get("/", authstatus, async (req, res) => {
 });
 
 router.get("/sign-in",authstatus,async (req,res) => {
-  res.render("signin",{authvalid:req.isAuthenticated});
+  res.render("signin");
 });
 
 router.get("/sign-up",authstatus,async (req,res) => {
-  res.render("signup",{authvalid:req.isAuthenticated});
+  res.render("signup");
 });
 router.get("/about",authstatus,async (req,res) => {
   res.render("about",{authvalid:req.isAuthenticated});
