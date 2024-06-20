@@ -4,7 +4,7 @@ import Note from "../models/notes_model.js";
 export const getAllNotes = async (req, res) => {
   try {
     const notes = await Note.find({ createdBy: req.user.userId });
-    res.render("notes", { notes, authvalid: req.isauthvalid });
+    res.render("notes", { notes, authvalid: req.isAuthenticated });
   } catch (error) {
     res.status(500).json({ msg: "Error fetching notes !!", error });
   }
