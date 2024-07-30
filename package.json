@@ -16,7 +16,7 @@
     "mongodb",
     "mongoose"
   ],
-  "author": "Mohit Gupta <https://github.com/MohitCode17>",
+  "author": "Ritik Raj",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^3.1.3"
