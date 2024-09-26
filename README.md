@@ -40,6 +40,3 @@ Notebook employs cutting-edge technologies to deliver its seamless functionality
   
 - **EJS:** With EJS as the templating engine, Notebook renders a dynamic and interactive user interface, enhancing the overall user experience.
 
-Thanks,
-Ritik
-# Notebook_Application
